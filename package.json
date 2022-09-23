@@ -1,0 +1,25 @@
+{
+  "name": "kuchhbhi",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GKP96/To-DoList.git"
+  },
+  "author": "Gautam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GKP96/To-DoList/issues"
+  },
+  "homepage": "https://github.com/GKP96/To-DoList#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.6.1"
+  }
+}
