@@ -10,7 +10,34 @@ let session = require('express-session');
 
 let cookieParser = require('cookie-parser'); 
 
+let nodemailer = require('nodemailer');
 
+let transporter = nodemailer.createTransport({
+    service :'gmail',
+    auth: {
+        user: 'gautam2002pandeyjee@gmail.com',
+        pass:"jcfnewxglaqulkcq"
+    }
+})
+
+
+router.post('/sendMail',(req,res)=>{
+    let mailOptions = {
+        from: 'gautm2002pandeyjee@gmail.com',
+        to: "gautam20106107014@mitmuzaffarpur.org",
+        subject :"update password",
+        text :"please update your password. Sent by nodemailer using node.js"
+    }
+    transporter.sendMail(mailOptions,function(err,result){
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log("Email sent"+ result.response);
+            res.send(result.res);
+        }
+    })
+})
 router.get('/path',(req,res)=>{
     res.send("working perfectly");
 }) 
@@ -26,6 +53,7 @@ router.post('/signup',async(req,res)=>{
     await user.save();
     res.send(user);
 })
+
 
 
 // finding users
